@@ -102,7 +102,7 @@ plain-English `explanation`.
 | `ML_SNAPSHOT_TTL_SECONDS` | ml-service | `3600` | Market snapshot cache lifetime |
 | `ML_RISK_FREE_RATE` | ml-service | `0.04` | Used in Sharpe ratio |
 | `ML_SERVICE_URL` | backend | `http://localhost:8000` | ML service location |
-| `DB_URL`, `DB_USERNAME`, `DB_PASSWORD` | backend | in-memory H2 | PostgreSQL in Docker |
+| `DB_URL`, `DB_USERNAME`, `DB_PASSWORD` | backend | in-memory H2 | PostgreSQL in Docker; schema managed by Flyway |
 | `CORS_ALLOWED_ORIGINS` | backend | `http://localhost:3000,http://localhost:5173` | Browser origins |
 | `API_DOCS_ENABLED` | backend | `true` | Toggle Swagger UI |
 

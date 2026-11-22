@@ -8,7 +8,9 @@ spring:
   jpa:
     open-in-view: false
     hibernate:
-      ddl-auto: ${DDL_AUTO:update}
+      ddl-auto: validate
+  flyway:
+    enabled: true
   mvc:
     problemdetails:
       enabled: true

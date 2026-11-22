@@ -31,3 +31,4 @@ cd frontend && npm ci && npm run typecheck && npm run lint && npm test && npm ru
   in `factors[]` with its exact contribution. Don't add hidden adjustments to scores.
 * **No personal financial data at rest.** The history table stores recommendations only.
 * **Tests use the synthetic market-data provider** so they are deterministic and offline.
+* **Schema changes are Flyway migrations.** Add a new `backend/src/main/resources/db/migration/V<n>__description.sql`; never edit an applied one. Hibernate only validates the schema. CI runs the backend tests against both H2 and PostgreSQL.

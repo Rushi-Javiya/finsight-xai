@@ -101,6 +101,4 @@ All reported return figures are **backward-looking**.
 * The universes are fixed lists of 20 large caps; there is no user-defined universe yet.
 * No authentication or per-user portfolios. Add OIDC at the backend and a user key on
   `AdviceRecord` when needed.
-* Schema is managed by Hibernate `ddl-auto=update`; introduce Flyway migrations before
-  production use.
 * The snapshot cache is in-process; use Redis if running multiple ML replicas.
