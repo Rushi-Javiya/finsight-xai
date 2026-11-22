@@ -1,0 +1,91 @@
+{
+  "asOf": "2026-11-20T00:00:00Z",
+  "riskLevel": "MEDIUM",
+  "country": "US",
+  "currency": "USD",
+  "dataSource": "synthetic",
+  "universeSize": 20,
+  "holdings": [
+    {
+      "ticker": "NVDA",
+      "name": "NVIDIA Corporation",
+      "sector": "Technology",
+      "rank": 1,
+      "score": 0.7483,
+      "weight": 0.6,
+      "allocationAmount": 6000.0,
+      "price": 180.12,
+      "annualReturn": 0.31,
+      "volatility": 0.4118,
+      "maxDrawdown": -0.2,
+      "factors": [
+        {
+          "factor": "growth",
+          "label": "Growth",
+          "rawValue": 1.0,
+          "displayValue": "100.0%",
+          "percentile": 100.0,
+          "zScore": 2.6,
+          "weight": 0.15,
+          "contribution": 0.39,
+          "imputed": false
+        },
+        {
+          "factor": "sentiment",
+          "label": "News sentiment",
+          "rawValue": null,
+          "displayValue": "n/a",
+          "percentile": null,
+          "zScore": 0.0,
+          "weight": 0.05,
+          "contribution": 0.0,
+          "imputed": true
+        }
+      ],
+      "mlDrivers": [
+        { "feature": "mom_126", "label": "6-month momentum", "value": -0.4157, "contribution": 0.0528 }
+      ],
+      "explanation": "NVIDIA Corporation ranks #1 of 20 for a medium-risk profile.",
+      "dataQualityNotes": []
+    },
+    {
+      "ticker": "JPM",
+      "name": "JPMorgan Chase & Co.",
+      "sector": "Financial Services",
+      "rank": 2,
+      "score": 0.5,
+      "weight": 0.4,
+      "allocationAmount": 4000.0,
+      "price": 250.0,
+      "annualReturn": 0.12,
+      "volatility": 0.23,
+      "maxDrawdown": -0.1,
+      "factors": [],
+      "mlDrivers": [],
+      "explanation": "JPMorgan ranks #2 of 20.",
+      "dataQualityNotes": ["ML outlook excluded from the score."]
+    }
+  ],
+  "metrics": {
+    "expectedAnnualReturn": 0.0513,
+    "annualVolatility": 0.1601,
+    "sharpeRatio": 0.071,
+    "maxDrawdown": -0.1413,
+    "diversificationRatio": 1.837,
+    "effectiveHoldings": 1.9,
+    "riskFreeRate": 0.04
+  },
+  "sectorExposure": { "Technology": 0.6, "Financial Services": 0.4 },
+  "model": {
+    "name": "XGBoost relative-return ranker",
+    "trainedSamples": 2160,
+    "validationRankIc": -0.094,
+    "active": false,
+    "horizonDays": 21,
+    "features": ["1-month momentum"]
+  },
+  "factorWeights": { "momentum": 0.2, "ml_signal": 0.0 },
+  "methodology": "Weighted factor model.",
+  "disclaimer": "Not investment advice.",
+  "someFutureField": "ignored"
+}

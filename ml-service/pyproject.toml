@@ -1,0 +1,17 @@
+[project]
+name = "finsight-ml-service"
+version = "1.0.0"
+description = "Explainable stock scoring and portfolio construction service"
+requires-python = ">=3.11"
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP", "SIM"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+filterwarnings = ["ignore::DeprecationWarning"]

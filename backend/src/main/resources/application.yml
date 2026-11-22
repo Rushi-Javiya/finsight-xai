@@ -1,0 +1,53 @@
+spring:
+  application:
+    name: finsight-backend
+  datasource:
+    url: ${DB_URL:jdbc:h2:mem:finsight;DB_CLOSE_DELAY=-1}
+    username: ${DB_USERNAME:sa}
+    password: ${DB_PASSWORD:}
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: ${DDL_AUTO:update}
+  mvc:
+    problemdetails:
+      enabled: true
+
+server:
+  port: ${PORT:8080}
+  shutdown: graceful
+  error:
+    include-message: never
+    include-stacktrace: never
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics
+  endpoint:
+    health:
+      probes:
+        enabled: true
+      show-details: never
+
+springdoc:
+  api-docs:
+    enabled: ${API_DOCS_ENABLED:true}
+  swagger-ui:
+    enabled: ${API_DOCS_ENABLED:true}
+    path: /swagger-ui.html
+
+logging:
+  pattern:
+    level: "%5p [%X{requestId:-}]"
+
+finsight:
+  ml:
+    base-url: ${ML_SERVICE_URL:http://localhost:8000}
+    api-key: ${ML_API_KEY:}
+    connect-timeout: 2s
+    read-timeout: 60s
+    max-attempts: 2
+  cors:
+    allowed-origins: ${CORS_ALLOWED_ORIGINS:http://localhost:3000,http://localhost:5173}
